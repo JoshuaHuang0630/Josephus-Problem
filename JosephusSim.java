@@ -42,16 +42,16 @@ public class JosephusSim
 	public void eliminate()
 	{
 		// count to the elimination count
-		for (int i = 0; i < eliminationCount; i++)
+		for (int i = 0; i < eliminationCount - 1; i++)
 		{
 			track = track.next;
 		}
 
 		// print who will be eliminated
-		System.out.println(track.name + " eliminated!");
+		System.out.println(track.next.name + " eliminated!");
 
 		// eliminate the person and update "front" of the circle and size
-
+		track.next = track.next.next;
 		circle = track.next;
 		size--;
 	}
