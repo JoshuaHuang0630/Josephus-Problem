@@ -61,15 +61,24 @@ public class JosephusSim
 		return false;
 	}
 
-	public String toString()
-	{
-		// if there's only one person left, print them as the last survivor
-		if (circle.next == null)
-		{
-            return circle.name + " is the last survivor!";
-		}
-		// print the remaining survivors (watch out for infinite loop since list is circular)
-
-		return "";
+	public String toString(){
+      // if there's only one person left, print them as the last survivor
+      if (isOver()) { 
+         return circle.name + " is the last survivor!"; 
+      }
+      
+      // print the remaining survivors (watch out for infinite loop since list is circular)
+      String result = "";
+      PersonNode current = circle;
+      int count = 1;
+    
+      do {
+         if (count > 1) result += ", ";
+         result += count + "-" + current.name;
+         current = current.next;
+         count++;
+      } while (current != circle);
+    
+       return "Remaining survivors: " + result;
 	}
 }
