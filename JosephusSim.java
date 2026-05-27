@@ -39,11 +39,6 @@ public class JosephusSim
 		}
 	}
 
-	// optional helper method for constructing the circle
-	private void add(String val)
-	{
-	}
-
 	public void eliminate()
 	{
 		// count to the elimination count
