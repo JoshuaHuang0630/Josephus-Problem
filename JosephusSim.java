@@ -10,12 +10,24 @@ public class JosephusSim
 
 	public JosephusSim(String fileName)
 	{
+		eliminationCount = 0;
+		size = 0;
 		try
 		{
 			// load names from the file in order, generating a singly linked list of PersonNodes
 			Scanner file = new Scanner(new File(fileName));
+			circle = new PersonNode(file.next());
+			size++;
+			track = circle;
+			while (file.hasNext())
+			{
+				track.next = new PersonNode(file.next());
+				track = track.next;
+				size++;
+			}
 
 			// make the ring circular by attaching last node's next to front
+			track.next = circle;
 
 			// remember the last node as the one in front of the next to get eliminated
 
