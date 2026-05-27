@@ -31,6 +31,7 @@ public class JosephusSim
 			// generate, print, and save the random elimination count
 			Random rand = new Random();
 			eliminationCount = rand.nextInt(size / 2) + 1;
+			System.out.println("=== Elimination count is " + eliminationCount + " ===");
 		}
 		catch (FileNotFoundException e)
 		{
